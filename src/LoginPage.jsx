@@ -19,7 +19,7 @@ const LoginPage = ({ loginSuccess }) => {
             navigate("/");
           }
         }}
-        className="bg-gray-100 p-6 rounded-md shadow-md" // add the bg-gray-100 class here
+        className="bg-gray-100 p-6 rounded-md shadow-md"
       >
         <h1 className="text-center text-xl font-semibold mb-4">Masuk</h1>
         <div className="mb-4">

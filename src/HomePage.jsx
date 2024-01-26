@@ -23,8 +23,8 @@ const HomePage = ({ logout }) => {
     <MainLayout logout={logout}>
       <LanguageConsumer>
         {({ language }) => (
-          <div className="container mx-auto py-8 dark:bg-sky-800">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="container mx-auto py-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 dark:rounded-md">
               {activeNotes.length !== 0 ? (
                 activeNotes.map((note) => <Note key={note.id} note={note} />)
               ) : (
@@ -40,7 +40,7 @@ const HomePage = ({ logout }) => {
             {/* Circular "Create Note" button */}
             <Link
               to="/create"
-              className="bg-blue-500 text-white font-bold rounded-full fixed bottom-12 right-12 text-4xl flex items-center justify-center h-16 w-16"
+              className="bg-blue-500 text-white font-bold rounded-full fixed bottom-12 right-12 text-4xl flex items-center justify-center h-16 w-16 dark:bg-slate-800"
             >
               +
             </Link>

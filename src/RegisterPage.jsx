@@ -17,7 +17,7 @@ const RegisterPage = () => {
           const { error } = await register({ name, email, password });
           if (!error) navigate("/");
         }}
-        className="bg-gray-100 p-6 rounded-md shadow-md w-96" // Adjust the width as needed
+        className="bg-gray-100 p-6 rounded-md shadow-md w-96"
       >
         <h1 className="text-center text-xl font-semibold mb-4">Daftar</h1>
         <div className="mb-4">

@@ -4,14 +4,14 @@ const ChangeLanguageButton = (props) => {
   const { changeLanguage, language } = props;
 
   const buttonStyle = {
-    borderRadius: "50%", // membuat sudut menjadi bulat
-    width: "40px", // atur lebar tombol
-    height: "40px", // atur tinggi tombol
+    borderRadius: "50%",
+    width: "40px",
+    height: "40px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#808080", // warna latar belakang
-    color: "white", // warna teks
+    backgroundColor: "#808080",
+    color: "white",
     cursor: "pointer",
   };
 
