@@ -1,46 +1,40 @@
-import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
-import { LanguageProvider } from "../context/LanguageContext";
-import { ThemeProvider } from "../context/ThemeContext";
-import Appbar from "../components/Appbar";
+import PropTypes from 'prop-types';
+import { useState, useEffect } from 'react';
+import { LanguageProvider } from '../context/LanguageContext';
+import { ThemeProvider } from '../context/ThemeContext';
+import Appbar from '../components/Appbar';
 
 const MainLayout = (props) => {
   const { children, logout } = props;
 
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   const [language, setLanguage] = useState(
-    localStorage.getItem("language"),
-    "en"
+    localStorage.getItem('language'),
+    'en'
   );
 
   useEffect(() => {
     if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
+      setTheme('dark');
+      document.documentElement.classList.add('dark');
     } else {
-      setTheme("light");
-      document.documentElement.classList.remove("dark");
+      setTheme('light');
+      document.documentElement.classList.remove('dark');
     }
-
-    localStorage.theme = "light";
-
-    localStorage.theme = "dark";
-
-    localStorage.removeItem("theme");
   }, [theme]);
 
   function changeLanguage() {
-    setLanguage(language === "en" ? "id" : "en");
-    localStorage.setItem("language", language === "en" ? "id" : "en");
+    setLanguage(language === 'en' ? 'id' : 'en');
+    localStorage.setItem('language', language === 'en' ? 'id' : 'en');
   }
 
   function changeTheme() {
-    setTheme(theme === "light" ? "dark" : "light");
-    localStorage.setItem("theme", theme === "light" ? "dark" : "light");
+    setTheme(theme === 'light' ? 'dark' : 'light');
+    localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light');
   }
 
   return (
